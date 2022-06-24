@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
+import SigninPage from './pages/SigninPage';
+import RegisterPage from './pages/RegisterPage';
 import CustomThemeProvider from './components/CustomThemeProvider'
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
         <BrowserRouter>
             <CustomThemeProvider>
                 <Routes>
-                    <Route path="/" element={ <HomePage /> } />
+                    <Route path="/" element={ <SigninPage /> } />
+                    <Route path="register" element={ <RegisterPage /> } />
                 </Routes>
             </CustomThemeProvider>
         </BrowserRouter>
