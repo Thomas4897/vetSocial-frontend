@@ -9,6 +9,7 @@ function Register() {
     const [lastName, setLastName] = useState("")
     const [username, setUsername] = useState("")
     const [address, setAddress] = useState("")
+    const [branch, setBranch] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
@@ -19,6 +20,7 @@ function Register() {
             lastName: lastName,
             username: username,
             address: address,
+            branch: branch,
             email: email,
             password: password
         }
@@ -78,6 +80,16 @@ function Register() {
                             onChange={ e => setUsername(e.target.value) }
                         />
                     </Box>
+                    <Box mb={ 3 }>
+                        <TextField
+                            id="branch"
+                            type="text"
+                            label="Branch"
+                            variant="standard"
+                            value={ branch }
+                            onChange={ e => setBranch(e.target.value) }
+                        />
+                    </Box>
                     <TextField
                         id="email"
                         type="email"
@@ -97,7 +109,7 @@ function Register() {
                         onChange={ e => setPassword(e.target.value) }
                     />
                 </Box>
-                <Button onClick={ handleRegister } variant="contained">Submit</Button>
+                <Button onClick={ handleRegister } variant="contained">Submit</Button><br/><br/>
                 <h5>Already have an account?</h5>
                 <Link style={{ textDecoration: "none" }} to="/"><Button variant="contained">Login Here</Button></Link>
             </Box>

@@ -1,16 +1,16 @@
 import React from 'react';
 import { createTheme, ThemeProvider } from "@mui/material";
 
-const Sienna = '#806b34'
-const Black = '#1C1B1F'
+const DarkSlateGray = '#242526'
+const textColor = '#e4e6eb'
 
 const Theme = createTheme({
     palette: {
         primary: {
-        main: Sienna,
+        main: DarkSlateGray,
         },
         secondary: {
-        main: Black,
+        main: textColor,
         },
     },
 
