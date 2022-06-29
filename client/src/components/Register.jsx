@@ -110,7 +110,7 @@ function Register() {
                     />
                 </Box>
                 <Button onClick={ handleRegister } variant="contained">Submit</Button><br/><br/>
-                <h5>Already have an account?</h5>
+                <h6>Already have an account?</h6>
                 <Link style={{ textDecoration: "none" }} to="/"><Button variant="contained">Login Here</Button></Link>
             </Box>
         </Box>

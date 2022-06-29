@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Box, TextField, Button } from '@mui/material';
-import { addUser } from '../redux/userSlice';
+import { addUser, addToken } from '../redux/userSlice';
 import { useDispatch } from 'react-redux';
-const axios = require('axios').default
+const axios = require('axios').default;
 
 const URL = 'http://localhost:3001'
 
@@ -14,11 +14,12 @@ function Signin() {
     const navigate = useNavigate()
 
     const handleLogin = async () => {
-        const response = axios
-            .post(`${URL}/users/login`, {
+        const response = axios.post(`${URL}/users/login`, {
                 email: email,
                 password: password
-            }).then(response => {
+            })
+            .then(response => {
+                dispatch(addToken(response.data.token))
                 dispatch(addUser(response.data.payload))
                 navigate("profile")
                 return response.data.payload
@@ -50,7 +51,7 @@ function Signin() {
                     />
                 </Box>
                 <Button onClick={ handleLogin } variant="contained">Sign in</Button><br/><br/>
-                <h5>Don't Have an account?</h5>
+                <h6>Don't Have an account?</h6>
                 <Link style={{ textDecoration: "none" }} to="register"><Button variant="contained">Registe Here</Button></Link>
             </Box>
         </Box>

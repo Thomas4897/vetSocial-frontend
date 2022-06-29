@@ -5,6 +5,7 @@ import store from './redux/store';
 import SigninPage from './pages/SigninPage';
 import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage'
+import HomePage from './pages/HomePage';
 import CustomThemeProvider from './components/CustomThemeProvider'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                         <Route path="/" element={ <SigninPage /> } />
                         <Route path="register" element={ <RegisterPage /> } />
                         <Route path="profile" element={ <ProfilePage /> } />
+                        <Route path='home' element={ <HomePage /> } />
                     </Routes>
                 </CustomThemeProvider>
             </BrowserRouter>
