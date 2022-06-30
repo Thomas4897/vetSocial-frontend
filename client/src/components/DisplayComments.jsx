@@ -12,7 +12,7 @@ function DisplayComments(props) {
                         <div key={ comment._id } className="card-body">
                             <img style={{ width: "50px", height: "50px", marginRight: "10px", marginLeft: "25px" }} src={ comment.commentOwner.profilePicture } alt="profilePicture" />
                             <h6 style={{ width: "125px" }}>{ comment.commentOwner.username } : </h6>
-                            <p style={{ width: "83.5%", marginTop: "5px" }}>{ comment.comment }</p>
+                            <p style={{ width: "98%", marginTop: "5px" }}>{ comment.comment }</p>
                         </div>
                     )
                 })}

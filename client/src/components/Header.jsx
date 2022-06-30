@@ -17,7 +17,7 @@ function Header() {
     }
 
     return (
-        <Box marginBottom="25px" sx={{ flexGrow: 1 }}>
+        <Box marginBottom="25px" sx={{ flexGrow: 1, position: 'sticky', top: '0', zIndex: 100 }}>
             <AppBar position="static">
                 <Toolbar>
                     <Typography color="secondary" variant="h6" component="div" sx={{ flexGrow: 1 }}>VetSocial</Typography>
@@ -26,8 +26,8 @@ function Header() {
                             ? (
                             <>
                                 <Box sx={{ width: 500, display: 'flex', justifyContent: 'space-around', marginRight: '375px' }}>
-                                    <Box><Link to='/home'><HomeIcon color='secondary' /></Link></Box>
-                                    <Box><Link to='/profile'><img style={{ width: '23px', heigth: '23px', borderRadius: '15px' }} src={ user.profilePicture } alt="profilePicture" /></Link></Box>
+                                    <Box><Link to='/home'><HomeIcon fontSize='large' color='secondary' /></Link></Box>
+                                    <Box><Link to='/profile'><img style={{ width: '36px', heigth: '36px', borderRadius: '25px' }} src={ user.profilePicture } alt="profilePicture" /></Link></Box>
                                 </Box>
                                 <Box><Button onClick={ handleSignout } variant="contained" color="primary">Sign Out</Button></Box>
                             </>
