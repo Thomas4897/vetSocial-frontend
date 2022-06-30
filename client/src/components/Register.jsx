@@ -54,7 +54,7 @@ function Register() {
                         <TextField
                         id="lastName"
                         type="text"
-                        label="LastName"
+                        label="Last Name"
                         variant="standard"
                         value={ lastName }
                         onChange={ e => setLastName(e.target.value) }
