@@ -12,10 +12,8 @@ function ProfilePage() {
 
     return (
         <Layout>
-            <Box style={{ overflow: "scroll" }}>
-                <Box sx={{ marginBottom: "25px" }}>
-                    <CreatePost />
-                </Box>
+            <Box>
+                <CreatePost />
                 <DisplayPosts />
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end', margin: "20px", position: 'fixed', right: '50px', bottom: '20px'  }}>
                     <Button color='primary' variant="contained" onClick={ handleClick }><ArrowUpwardIcon /></Button>

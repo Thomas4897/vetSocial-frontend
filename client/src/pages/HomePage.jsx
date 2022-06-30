@@ -5,7 +5,7 @@ function HomePage() {
     return (
         <Layout>
             <div>
-                <h1>Hello World from HomePage</h1>
+                <h1>Hello World from HomePage!</h1>
             </div>
         </Layout>
     )

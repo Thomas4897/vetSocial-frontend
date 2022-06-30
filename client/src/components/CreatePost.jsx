@@ -37,7 +37,7 @@ function CreatePost() {
     }
 
     return (
-        <Box width={ 1 } display="flex" flexDirection="column" alignItems="center">
+        <Box width={ 1 } display="flex" flexDirection="column" alignItems="center" sx={{ marginBottom: '25px' }}>
             <div style={{ width: "50%" }} className='card'>
                 <div className="card-body">
                     <img style={{ width: "50px", height: "50px", marginRight: "25px" }} src={ ProfilePicture } alt="profilePicture" />
