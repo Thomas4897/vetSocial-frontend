@@ -31,7 +31,7 @@ function DisplayPosts() {
                         </div> 
                         {
                             clicked
-                            ? <DisplayComments comments={ comments } />
+                            ? <DisplayComments postId={ post._id } comments={ comments } />
                             : ""
                         }
                         <CreateComment postId={ post._id } />
