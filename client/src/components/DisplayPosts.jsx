@@ -1,20 +1,17 @@
-import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { selectUser } from '../redux/userSlice';
 import CreateComment from './CreateComment';
 import DisplayComments from './DisplayComments';
 import { Box } from '@mui/material';
+import { useState } from 'react';
 
 function DisplayPosts() {
     const user = useSelector(selectUser)
-    const [clicked, setClicked] = useState(false)
-
-    const handleClicked = () => {
-        setClicked(prevState => !prevState)
-    }
+    const [clickedPostComments, setClickedPostComment] = useState("");
 
     return (
         <Box width={ 1 } display="flex" flexDirection="column" alignItems="center">
+
             {user.postHistory.map(post => {
                 const comments = post.commentHistory
                 return (
@@ -24,12 +21,9 @@ function DisplayPosts() {
                             <h6 style={{ width: "125px" }}>{ post.postOwner.username } : </h6>
                             <p style={{ width: "70%", marginRight: "25px", marginTop: "5px" }}>{ post.post }</p>
                         </div> 
-                        {
-                            post.commentHistory.length > 0
-                            ? <DisplayComments comments={ comments } />
-                            : ""
-                        }
-                        <CreateComment postId={ post._id } />
+                        {comments.length > 0 ? <DisplayComments postId={ post._id } comments={ comments } clickedPostComments={clickedPostComments}/> : ""}
+                        <CreateComment comments={ comments } postId={ post._id } setClickedPostComment={setClickedPostComment} clickedPostComments={clickedPostComments} />
+                        
                     </div>
                 )
             })}
